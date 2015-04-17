@@ -1,0 +1,45 @@
+# Look and feel
+caption always "%{= 11}%{+b w}Screen: %n | %h %=%t %c"
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+ 
+# Our warning of activity
+activity "Activity in %t(%n)"
+ 
+# Left Right meta key mods
+#ALT-,. and ALT-<>
+bindkey "^[<" eval number !echo $WINDOW-1|bc
+bindkey "^[>" eval number !echo $WINDOW+1|bc
+bindkey "^[," prev
+bindkey "^[." next
+
+#    Keybindings    ##
+
+# bind F7  to detach screen session from this terminal
+# bind F8  to kill current screen window.
+# bind F9  to create a new screen
+# bind F10 to rename current screen window
+# bind F11 to move to previous window
+# bind F12 to move to next window
+bindkey -k k7 detach
+bindkey -k k8 kill
+bindkey -k k9 screen
+bindkey -k k; title
+bindkey -k k1 prev
+bindkey -k k2 next
+
+## special xterm hardstatus: use the window title.
+termcapinfo xterm* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+#
+# Run a screensaver if there's nothing happening for a while.
+#
+#idle 30 eval "screen cmatrix -f -o -u 10" "idle 0"
+
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+shelltitle :~#|bash
+
+#caption string "%?%F%{= gk}%:%{= wk}%? %n %?%F%{= wk}%? %C%A %{= wk} %t%= "
+# caption string "%?%F%{= wk}%? %C%A %{= wk} %t%= %?%F%{= gk}%:%{= wk}%? %n "
+# caption string "%?%F%{= wk}%? %C%A %D %d-%m-%Y %{= wk} %t%= %?%F%{= gk}%:%{= wk}%? %n " 
+
+shell -$SHELL
