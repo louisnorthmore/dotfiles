@@ -2,6 +2,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 #alias ls='ls -GFh'
 
+alias l='ls -alhrt'
+alias workssh='ssh -F ~/.ssh/work/config -i ~/.ssh/work/id_rsa'
 alias c='clear'
 
 source ~/dotfiles/git-prompt.sh
