@@ -7,6 +7,9 @@ alias workssh='ssh -F ~/.ssh/work/config -i ~/.ssh/work/id_rsa'
 alias sshwork='ssh -F ~/.ssh/work/config -i ~/.ssh/work/id_rsa'
 alias c='clear'
 
+# Add Visual Studio Code (code)
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 source ~/dotfiles/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 
